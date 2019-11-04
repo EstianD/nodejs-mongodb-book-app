@@ -1,0 +1,27 @@
+<h3><a class="btn btn-secondary" href="/book" <i class="fa fa-plus"></i>Create new</a> List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.title}}</td>
+            <td>{{this.author}}</td>
+            <td>{{this.genre}}</td>
+            <td>{{this.rating}}</td>
+            <td>
+                <a href="/book/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/book/delete/{{this.id}}"
+                    onclick="return confirm('Are you sure you want to delete this record?')"><i
+                        class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
